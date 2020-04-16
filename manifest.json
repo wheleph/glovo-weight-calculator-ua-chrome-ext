@@ -1,0 +1,42 @@
+{
+  "name": "Glovo weight calculator UA",
+  "version": "0.1",
+  "description": "Simple extension to calculate total weight of items in order",
+  "manifest_version": 2,
+  "permissions": ["declarativeContent"],
+  "page_action": {
+    "default_title": "Glovo weight calculator UA (Ctrl+B/Cmd+B)",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/16x16.png",
+      "32": "images/32x32.png",
+      "48": "images/48x48.png",
+      "128": "images/128x128.png"
+    }
+  },
+  "icons": {
+    "16": "images/16x16.png",
+    "32": "images/32x32.png",
+    "48": "images/48x48.png",
+    "128": "images/128x128.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://glovoapp.com/*"],
+      "js": ["jquery-3.5.0/jquery-3.5.0.min.js", "pullCartData.js"]
+    }
+  ],
+  "commands": {
+    "_execute_page_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "windows": "Ctrl+B",
+        "mac": "Ctrl+B"
+      }
+    }
+  }
+}
