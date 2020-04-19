@@ -1,6 +1,6 @@
 {
   "name": "Glovo weight calculator UA",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Simple extension to calculate total weight of items in order",
   "manifest_version": 2,
   "permissions": ["declarativeContent"],
